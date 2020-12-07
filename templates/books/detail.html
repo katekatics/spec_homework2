@@ -1,0 +1,17 @@
+<!--templates/books/detail.html-->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="album py-5 bg-light">
+    <div class="container">
+        <h2>{{book.title}}</h2>
+        <p>Автор: {{book.author}}</p>
+        <p>Рейтинг: {{book.rating}}</p>
+        <p class="text-muted">Добавлено: {{ book.owner }} {{ book.date }}</p>
+        <div class="btn-group">
+          <a type="button" class="btn btn-sm btn-outline-secondary" href="{% url 'edit_book' book.pk %}">Edit</a>
+          <a type="button" class="btn btn-sm btn-outline-secondary" href="{% url 'delete_book' book.pk %}">Delete</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

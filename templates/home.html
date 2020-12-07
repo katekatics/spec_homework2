@@ -1,0 +1,17 @@
+<!--templates/home.html-->
+{% extends 'base.html' %}
+
+{% block content %}
+<main role="main">
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Online Store</h1>
+      <p class="lead text-muted">You can look</p>
+      <p>
+        <a href="{% url 'books' %}" class="btn btn-primary my-2">Books</a>
+        <a href="{% url 'journals' %}" class="btn btn-primary my-2">Journals</a>
+      </p>
+    </div>
+  </section>
+</main>
+{% endblock content %}

@@ -1,0 +1,18 @@
+<!--templates/users/registration/login.html-->
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="album py-5 bg-light">
+    <div class="container">
+        <h2>Enter your account data</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-dark my-2">Log In</button>
+            <a class="btn btn-danger mx-2" type="submit" href="{% url 'password_reset' %}">Forgot password?</a>
+        </form>
+    </div>
+</div>
+{% endblock content %}
+

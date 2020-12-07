@@ -1,0 +1,17 @@
+<!--templates/journals/detail.html-->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="album py-5 bg-light">
+    <div class="container">
+        <h2>{{journal.title}}</h2>
+        <p>Редактор: {{journal.editor}}</p>
+        <p>Количетво страниц: {{journal.page_count}}</p>
+        <p class="text-muted">Добавлено: {{ journal.owner }} {{ journal.date }}</p>
+        <div class="btn-group">
+          <a type="button" class="btn btn-sm btn-outline-secondary" href="{% url 'edit_journal' journal.pk %}">Edit</a>
+          <a type="button" class="btn btn-sm btn-outline-secondary" href="{% url 'delete_journal' journal.pk %}">Delete</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

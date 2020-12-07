@@ -1,0 +1,32 @@
+<!--templates/journals/list.html-->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="album py-5 bg-light">
+    <div class="container">
+        <a type="button" class="btn btn-sm btn-outline-secondary" href="{% url 'new_journal' %}" style="margin-bottom: 20px;">Create New Journal</a>
+        <a type="button" class="btn btn-sm btn-outline-secondary" href="{% url 'journals_reversed' %}" style="margin-bottom: 20px;">Journals Reversed</a>
+        <div class="row">
+            {% for journal in journals %}
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <a href="{% url 'detail_journal' journal.pk %}">
+                    <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text={{journal.title}}" alt="Card image cap">
+                </a>
+                <div class="card-body">
+                    <p class="card-text">Редактор: {{ journal.editor }}<br>Количество страниц: {{ journal.page_count }}</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a type="button" class="btn btn-sm btn-outline-secondary" href="{% url 'edit_journal' journal.pk %}">Edit</a>
+                      <a type="button" class="btn btn-sm btn-outline-secondary" href="{% url 'delete_journal' journal.pk %}">Delete</a>
+                    </div>
+                    <small class="text-muted">by {{ journal.owner }}<br>{{ journal.date }}</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

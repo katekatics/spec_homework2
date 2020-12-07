@@ -1,0 +1,23 @@
+<!--templates/home.html-->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="album py-5 bg-light">
+    <div class="container">
+        <h1 class="display-4">Екатерина Астраханцева</h1>
+            <p class="lead">Find me here</p>
+            <div class="row">
+                <a href="https://www.facebook.com/kate.katic.524" target="_blank">
+                   <img style="width: 100px; height: 100px;" src="{% static 'img/facebook.png' %}">
+                </a>
+                <a href="https://twitter.com/KateKaticsss" target="_blank">
+                    <img style="width: 100px; height: 100px;" src="{% static 'img/twitter.png' %}">
+                </a>
+                <a href="https://github.com/katekatics/spec_homework2.git" target="_blank">
+                    <img style="width: 100px; height: 100px;" src="{% static 'img/github.png' %}">
+                </a>
+            </div>
+    </div>
+</div>
+{% endblock content %}
